@@ -1,3 +1,19 @@
+#Data Cleaning Project: Layoffs Dataset
+
+This project focuses on cleaning and preparing the layoffs dataset for further analysis.  
+The goal is to remove duplicates, standardize inconsistent data, handle null values, and format the data properly.
+
+---
+
+## 🗃️ Steps Performed
+
+1. Backup the original data
+2. Find and remove duplicate records
+3. Standardize text data (company names, industries, countries)
+4. Convert date fields into proper formats
+5. Handle missing (`NULL`) values
+6. Final cleanup for a clean dataset ready for analysis
+
 ```sql
 -- 1️⃣ BACKUP ORIGINAL DATA
 CREATE TABLE layoff_dup LIKE layoffs;
