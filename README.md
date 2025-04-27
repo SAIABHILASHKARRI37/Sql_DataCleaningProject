@@ -1,7 +1,4 @@
-# Sql_DataCleaningProject
-
--- 🧹 DATA CLEANING PROJECT: Layoffs Dataset
-
+```sql
 -- 1️⃣ BACKUP ORIGINAL DATA
 CREATE TABLE layoff_dup LIKE layoffs;
 
@@ -54,12 +51,12 @@ WHERE row_num > 1;
 UPDATE layoff_dup1
 SET company = TRIM(company);
 
--- 6.2 Standardize 'industry' names (e.g., "Crypto" and "Crypto Currency" → "Crypto")
+-- 6.2 Standardize 'industry' names
 UPDATE layoff_dup1
 SET industry = 'Crypto'
 WHERE industry LIKE 'Crypto%';
 
--- 6.3 Standardize 'country' names (e.g., "United States" → "USA")
+-- 6.3 Standardize 'country' names
 UPDATE layoff_dup1
 SET country = 'USA'
 WHERE country LIKE 'United States%';
@@ -95,9 +92,11 @@ WHERE total_laid_off IS NULL AND percentage_laid_off IS NULL;
 
 -- 8️⃣ FINAL CLEANUP
 
--- Drop 'row_num' column as it's no longer needed
+-- Drop 'row_num' column
 ALTER TABLE layoff_dup1
 DROP COLUMN row_num;
 
 -- View final cleaned data
 SELECT * FROM layoff_dup1;
+
+```
